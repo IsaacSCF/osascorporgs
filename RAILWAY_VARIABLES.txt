@@ -1,0 +1,118 @@
+═══════════════════════════════════════════════════════════════
+  🚂 VARIÁVEIS DE AMBIENTE PARA O RAILWAY
+═══════════════════════════════════════════════════════════════
+
+COPIE E COLE ESTAS VARIÁVEIS NO RAILWAY:
+
+1. Acesse: https://railway.app/dashboard
+2. Clique no seu projeto
+3. Clique no serviço do BACKEND (não no PostgreSQL)
+4. Vá para a aba "Variables"
+5. Clique em "+ New Variable"
+6. Adicione cada variável abaixo:
+
+═══════════════════════════════════════════════════════════════
+
+VARIÁVEL 1:
+Nome: ENVIRONMENT
+Valor: production
+
+═══════════════════════════════════════════════════════════════
+
+VARIÁVEL 2:
+Nome: JWT_SECRET_KEY
+Valor: [GERE UMA CHAVE SEGURA - VER INSTRUÇÕES ABAIXO]
+
+═══════════════════════════════════════════════════════════════
+
+VARIÁVEL 3:
+Nome: SECRET_KEY
+Valor: [GERE OUTRA CHAVE DIFERENTE - VER INSTRUÇÕES ABAIXO]
+
+═══════════════════════════════════════════════════════════════
+
+VARIÁVEL 4:
+Nome: FRONTEND_URL
+Valor: [COLE A URL DO VERCEL AQUI DEPOIS DO DEPLOY]
+Exemplo: https://gestao-orgs.vercel.app
+
+═══════════════════════════════════════════════════════════════
+
+⚠️  IMPORTANTE: A variável DATABASE_URL será criada AUTOMATICAMENTE
+    quando você adicionar o PostgreSQL no Railway. NÃO crie manualmente!
+
+═══════════════════════════════════════════════════════════════
+
+🔑 COMO GERAR CHAVES SEGURAS:
+
+OPÇÃO 1 - Python (Recomendado):
+Abra o terminal/CMD e execute:
+
+python -c "import secrets; print(secrets.token_urlsafe(32))"
+
+Execute 2 vezes para gerar 2 chaves diferentes!
+
+───────────────────────────────────────────────────────────────
+
+OPÇÃO 2 - Script Auxiliar:
+Execute o arquivo: deploy-helper.bat
+Escolha a opção [2] para gerar as chaves
+
+───────────────────────────────────────────────────────────────
+
+OPÇÃO 3 - Online:
+Acesse: https://generate-secret.vercel.app/32
+Gere 2 chaves diferentes
+
+═══════════════════════════════════════════════════════════════
+
+📝 EXEMPLO DE CHAVES GERADAS (NÃO USE ESTAS, GERE AS SUAS!):
+
+JWT_SECRET_KEY=xK9mP2nQ5rT8wY1zA4bC7dE0fG3hJ6kL9mN2pQ5rT8wY
+SECRET_KEY=aB4cD7eF0gH3iJ6kL9mN2oP5qR8sT1uV4wX7yZ0aB3cD
+
+═══════════════════════════════════════════════════════════════
+
+✅ CHECKLIST:
+
+[ ] ENVIRONMENT = production
+[ ] JWT_SECRET_KEY = [sua chave única de 32+ caracteres]
+[ ] SECRET_KEY = [outra chave única diferente de 32+ caracteres]
+[ ] FRONTEND_URL = [URL do Vercel após deploy]
+[ ] DATABASE_URL = [criada automaticamente pelo PostgreSQL]
+
+═══════════════════════════════════════════════════════════════
+
+🔒 SEGURANÇA:
+
+✅ Nunca compartilhe suas chaves secretas
+✅ Use chaves diferentes para JWT e SECRET
+✅ Cada chave deve ter no mínimo 32 caracteres
+✅ Use caracteres aleatórios (letras, números, símbolos)
+✅ Não use as chaves de exemplo acima!
+
+═══════════════════════════════════════════════════════════════
+
+📌 ORDEM DE CONFIGURAÇÃO:
+
+1. Adicione ENVIRONMENT, JWT_SECRET_KEY e SECRET_KEY primeiro
+2. Faça o deploy do frontend no Vercel
+3. Copie a URL do Vercel
+4. Volte ao Railway e adicione/atualize FRONTEND_URL
+5. Aguarde o redeploy automático
+
+═══════════════════════════════════════════════════════════════
+
+🆘 PROBLEMAS?
+
+Se o backend não iniciar:
+→ Verifique os logs no Railway Dashboard
+→ Confirme que todas as 4 variáveis estão configuradas
+→ Verifique se as chaves têm pelo menos 32 caracteres
+
+═══════════════════════════════════════════════════════════════
+
+📚 DOCUMENTAÇÃO COMPLETA:
+Ver arquivo: DEPLOY_INSTRUCTIONS.md
+
+═══════════════════════════════════════════════════════════════
